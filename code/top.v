@@ -48,7 +48,7 @@ module docpu_top(
 
     wire [31:0] a;
     assign a = pc - `TextBegin;
-    imem imem(a[12:2],inst);
+    dist_mem_gen_0 imem(a[12:2],inst);
 
     dmem dmem(
         .clk(clk),
