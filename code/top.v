@@ -1,36 +1,64 @@
+`include "D:\Ray\Vivado\DoCPU_89\DoCPU_89.srcs\sources_1\new\defines.v"
 `timescale 1ns / 1ps
-module top(
-    input clock_100MHZ,
-    input reset,
-    input [7:0] sel,
-    output [7:0] o_seg,
-    output [7:0] o_sel
+//////////////////////////////////////////////////////////////////////////////////
+// Usage    DoCPU¶¥²ãÄ£¿é
+// Vision   0.0
+// Auther   Ray
+//////////////////////////////////////////////////////////////////////////////////
+
+module docpu_top(
+	input clk,
+	input rst,
+    output [31:0] pc,
+    output [31:0] inst,
+    output [31:0] result
+);
+    //Á¬½ÓÖ¸Áî´æ´¢Æ÷
+    wire rom_ce;
+    wire mem_we_i;
+    wire[`RegBus] mem_addr_i;
+    wire[`RegBus] mem_data_i;
+    wire[`RegBus] mem_data_o;
+    wire[3:0] mem_sel_i; 
+    wire mem_ce_i;   
+    wire[5:0] int;
+    wire timer_int;
+    
+    assign int = {5'b00000, timer_int};
+
+    docpu docpu(
+        .clk(clk),
+        .rst(rst),
+    
+        .rom_addr_o(pc),
+        .rom_data_i(inst),
+        .rom_ce_o(rom_ce),
+
+        .int_i(int),
+
+        .ram_we_o(mem_we_i),
+        .ram_addr_o(mem_addr_i),
+        .ram_sel_o(mem_sel_i),
+        .ram_data_o(mem_data_i),
+        .ram_data_i(mem_data_o),
+        .ram_ce_o(mem_ce_i),
+        
+        .timer_int_o(timer_int)
     );
-    wire clk_1;
-    wire clk_2;
-    wire cpu_clk;
-    wire clk_wiz_lock;
-    wire [31:0] inst;
-    wire [31:0] pc;
-    wire [31:0] ans;
-    wire [31:0] r6;
-    reg [31:0] show;
-    wire [31:0] count;
-    wire [31:0] compare;
-    //clk_wiz_cpu wiz(.reset(~reset),.clk_in1(clock_100MHZ),.clk_out1(cpu_clk),.locked(clk_wiz_lock));
-    time_divider#(10) Divider (.I_CLK(clock_100MHZ),.rst(~reset),.O_CLK(clk_1));
-    time_divider#(5000000) Divider_slow (.I_CLK(clock_100MHZ),.rst(~reset),.O_CLK(clk_2));
-    assign cpu_clk=sel[0]? clk_2:clk_1;
-    sccomp_dataflow cpu (.clk_in(cpu_clk),.reset(~reset),.inst(inst),.pc(pc),.answer(ans),.count(count),.compare(compare)); 
-    seg7x16 seg7 (.clk(clock_100MHZ),.reset(~reset),.cs(1'b1),.i_data(show),.o_seg(o_seg),.o_sel(o_sel));
-    always@(*)
-    begin
-        case(sel[7:1])
-        7'b000_0000:show<=ans;
-        7'b000_0001:show<=pc;
-        7'b000_0010:show<=inst;
-        7'b000_0100:show<=count;
-        7'b000_1000:show<=compare;
-        endcase
-    end
+
+    wire [31:0] a;
+    assign a = pc - `TextBegin;
+    imem imem(a[12:2],inst);
+
+    dmem dmem(
+        .clk(clk),
+        .ce(mem_ce_i),
+        .we(mem_we_i),
+        .addr_in(mem_addr_i),
+        .sel(mem_sel_i),
+        .data_i(mem_data_i),
+        .data_o(mem_data_o),
+        .result(result)
+    );
+
 endmodule
