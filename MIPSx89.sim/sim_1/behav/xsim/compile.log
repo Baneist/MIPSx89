@@ -1,0 +1,103 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/MIPSx89.gen/sources_1/ip/imem/sim/imem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/Asynchronous_D_FF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ansynchronous
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/II.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ii
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/LLbit_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LLbit_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/PipeDEreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeDEreg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/PipeEMreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeEMreg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/PipeEXE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeEXE
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/PipeID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeID
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/PipeIF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeIF
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/PipeIR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeIR
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/PipeMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/PipeMWreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeMWreg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/PipeWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module ADDU
+INFO: [VRFC 10-311] analyzing module ADD
+INFO: [VRFC 10-311] analyzing module SUBU
+INFO: [VRFC 10-311] analyzing module SUB
+INFO: [VRFC 10-311] analyzing module AND
+INFO: [VRFC 10-311] analyzing module OR
+INFO: [VRFC 10-311] analyzing module XOR
+INFO: [VRFC 10-311] analyzing module NOR
+INFO: [VRFC 10-311] analyzing module LUI
+INFO: [VRFC 10-311] analyzing module SLT
+INFO: [VRFC 10-311] analyzing module SLTU
+INFO: [VRFC 10-311] analyzing module SRA
+INFO: [VRFC 10-311] analyzing module SLLSLR
+INFO: [VRFC 10-311] analyzing module SRL
+INFO: [VRFC 10-311] analyzing module alu_selector
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/clo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clo
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/clz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/complement.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module complement32
+INFO: [VRFC 10-311] analyzing module complement64
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/cp0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cp0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/cpmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/cpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/cu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/direct.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module direct
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module div
+INFO: [VRFC 10-311] analyzing module divu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/divider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module time_divider
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extend1
+INFO: [VRFC 10-311] analyzing module extend5
+INFO: [VRFC 10-311] analyzing module extend8
+INFO: [VRFC 10-311] analyzing module extend16
+INFO: [VRFC 10-311] analyzing module extend18
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/hi_lo_function.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hi_lo_function
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/mult.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mult
+INFO: [VRFC 10-311] analyzing module multu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_pc
+INFO: [VRFC 10-311] analyzing module mux_rf
+INFO: [VRFC 10-311] analyzing module mux_alu
+INFO: [VRFC 10-311] analyzing module mux_hi
+INFO: [VRFC 10-311] analyzing module mux_lo
+INFO: [VRFC 10-311] analyzing module mux2_32
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/npc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module npc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/pcreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pcreg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/predictor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module predictor
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/sccomp_dataflow.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sccomp_dataflow
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/seg7x16.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module seg7x16
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/code/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Repos/MIPSx89/MIPSx89.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
