@@ -10,473 +10,374 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source top.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental D:/Repos/MIPSx89/MIPSx89.srcs/utils_1/imports/synth_1/top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/Repos/MIPSx89/MIPSx89.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top top -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 6764
+INFO: [Synth 8-7075] Helper process launched with PID 23836
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1294.020 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1282.527 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [D:/Repos/MIPSx89/code/top.v:2]
-INFO: [Synth 8-6157] synthesizing module 'time_divider' [D:/Repos/MIPSx89/code/divider.v:2]
-	Parameter index bound to: 10 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'time_divider' (0#1) [D:/Repos/MIPSx89/code/divider.v:2]
-INFO: [Synth 8-6157] synthesizing module 'time_divider__parameterized0' [D:/Repos/MIPSx89/code/divider.v:2]
-	Parameter index bound to: 5000000 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'time_divider__parameterized0' (0#1) [D:/Repos/MIPSx89/code/divider.v:2]
-INFO: [Synth 8-6157] synthesizing module 'sccomp_dataflow' [D:/Repos/MIPSx89/code/sccomp_dataflow.v:2]
-INFO: [Synth 8-6157] synthesizing module 'cpu' [D:/Repos/MIPSx89/code/cpu.v:3]
-INFO: [Synth 8-6157] synthesizing module 'pcreg' [D:/Repos/MIPSx89/code/pcreg.v:2]
-	Parameter initvalue bound to: 4194304 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'Ansynchronous' [D:/Repos/MIPSx89/code/Asynchronous_D_FF.v:2]
-	Parameter initvalue bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'Ansynchronous' (0#1) [D:/Repos/MIPSx89/code/Asynchronous_D_FF.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Ansynchronous__parameterized0' [D:/Repos/MIPSx89/code/Asynchronous_D_FF.v:2]
-	Parameter initvalue bound to: 1'b1 
-INFO: [Synth 8-6155] done synthesizing module 'Ansynchronous__parameterized0' (0#1) [D:/Repos/MIPSx89/code/Asynchronous_D_FF.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'pcreg' (0#1) [D:/Repos/MIPSx89/code/pcreg.v:2]
-INFO: [Synth 8-6157] synthesizing module 'PipeIF' [D:/Repos/MIPSx89/code/PipeIF.v:2]
-INFO: [Synth 8-6157] synthesizing module 'npc' [D:/Repos/MIPSx89/code/npc.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'npc' (0#1) [D:/Repos/MIPSx89/code/npc.v:2]
-INFO: [Synth 8-6157] synthesizing module 'mux_pc' [D:/Repos/MIPSx89/code/mux.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/mux.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'mux_pc' (0#1) [D:/Repos/MIPSx89/code/mux.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'PipeIF' (0#1) [D:/Repos/MIPSx89/code/PipeIF.v:2]
-INFO: [Synth 8-6157] synthesizing module 'PipeIR' [D:/Repos/MIPSx89/code/PipeIR.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'PipeIR' (0#1) [D:/Repos/MIPSx89/code/PipeIR.v:2]
-INFO: [Synth 8-6157] synthesizing module 'PipeID' [D:/Repos/MIPSx89/code/PipeID.v:2]
-INFO: [Synth 8-6157] synthesizing module 'decoder' [D:/Repos/MIPSx89/code/DEC.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/DEC.v:74]
-INFO: [Synth 8-6155] done synthesizing module 'decoder' (0#1) [D:/Repos/MIPSx89/code/DEC.v:2]
-INFO: [Synth 8-6157] synthesizing module 'cu' [D:/Repos/MIPSx89/code/cu.v:2]
-INFO: [Synth 8-6157] synthesizing module 'predictor' [D:/Repos/MIPSx89/code/predictor.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'predictor' (0#1) [D:/Repos/MIPSx89/code/predictor.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/cu.v:118]
-INFO: [Synth 8-6155] done synthesizing module 'cu' (0#1) [D:/Repos/MIPSx89/code/cu.v:2]
-INFO: [Synth 8-6157] synthesizing module 'direct' [D:/Repos/MIPSx89/code/direct.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'direct' (0#1) [D:/Repos/MIPSx89/code/direct.v:2]
-INFO: [Synth 8-6157] synthesizing module 'regfile' [D:/Repos/MIPSx89/code/regfile.v:2]
-INFO: [Synth 8-6157] synthesizing module 'pcreg__parameterized0' [D:/Repos/MIPSx89/code/pcreg.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'pcreg__parameterized0' (0#1) [D:/Repos/MIPSx89/code/pcreg.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'regfile' (0#1) [D:/Repos/MIPSx89/code/regfile.v:2]
-INFO: [Synth 8-6157] synthesizing module 'extend5' [D:/Repos/MIPSx89/code/extend.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'extend5' (0#1) [D:/Repos/MIPSx89/code/extend.v:8]
-INFO: [Synth 8-6157] synthesizing module 'extend16' [D:/Repos/MIPSx89/code/extend.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'extend16' (0#1) [D:/Repos/MIPSx89/code/extend.v:21]
-INFO: [Synth 8-6157] synthesizing module 'extend18' [D:/Repos/MIPSx89/code/extend.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'extend18' (0#1) [D:/Repos/MIPSx89/code/extend.v:28]
-INFO: [Synth 8-6157] synthesizing module 'ADD' [D:/Repos/MIPSx89/code/alu.v:60]
-INFO: [Synth 8-6155] done synthesizing module 'ADD' (0#1) [D:/Repos/MIPSx89/code/alu.v:60]
-INFO: [Synth 8-6157] synthesizing module 'ii' [D:/Repos/MIPSx89/code/II.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'ii' (0#1) [D:/Repos/MIPSx89/code/II.v:2]
-INFO: [Synth 8-6157] synthesizing module 'cp0' [D:/Repos/MIPSx89/code/cp0.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/cp0.v:63]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/cp0.v:131]
-INFO: [Synth 8-6155] done synthesizing module 'cp0' (0#1) [D:/Repos/MIPSx89/code/cp0.v:2]
-INFO: [Synth 8-6157] synthesizing module 'LLbit_reg' [D:/Repos/MIPSx89/code/LLbit_reg.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'LLbit_reg' (0#1) [D:/Repos/MIPSx89/code/LLbit_reg.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'PipeID' (0#1) [D:/Repos/MIPSx89/code/PipeID.v:2]
-INFO: [Synth 8-6157] synthesizing module 'PipeDEreg' [D:/Repos/MIPSx89/code/PipeDEreg.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'PipeDEreg' (0#1) [D:/Repos/MIPSx89/code/PipeDEreg.v:2]
-INFO: [Synth 8-6157] synthesizing module 'PipeEXE' [D:/Repos/MIPSx89/code/PipeEXE.v:2]
-INFO: [Synth 8-6157] synthesizing module 'mux_alu' [D:/Repos/MIPSx89/code/mux.v:54]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/mux.v:67]
-INFO: [Synth 8-6155] done synthesizing module 'mux_alu' (0#1) [D:/Repos/MIPSx89/code/mux.v:54]
-INFO: [Synth 8-6157] synthesizing module 'alu' [D:/Repos/MIPSx89/code/alu.v:2]
-INFO: [Synth 8-6157] synthesizing module 'ADDU' [D:/Repos/MIPSx89/code/alu.v:46]
-INFO: [Synth 8-6155] done synthesizing module 'ADDU' (0#1) [D:/Repos/MIPSx89/code/alu.v:46]
-INFO: [Synth 8-6157] synthesizing module 'SUBU' [D:/Repos/MIPSx89/code/alu.v:72]
-INFO: [Synth 8-6155] done synthesizing module 'SUBU' (0#1) [D:/Repos/MIPSx89/code/alu.v:72]
-INFO: [Synth 8-6157] synthesizing module 'SUB' [D:/Repos/MIPSx89/code/alu.v:81]
-INFO: [Synth 8-6155] done synthesizing module 'SUB' (0#1) [D:/Repos/MIPSx89/code/alu.v:81]
-INFO: [Synth 8-6157] synthesizing module 'AND' [D:/Repos/MIPSx89/code/alu.v:95]
-INFO: [Synth 8-6155] done synthesizing module 'AND' (0#1) [D:/Repos/MIPSx89/code/alu.v:95]
-INFO: [Synth 8-6157] synthesizing module 'OR' [D:/Repos/MIPSx89/code/alu.v:102]
-INFO: [Synth 8-6155] done synthesizing module 'OR' (0#1) [D:/Repos/MIPSx89/code/alu.v:102]
-INFO: [Synth 8-6157] synthesizing module 'XOR' [D:/Repos/MIPSx89/code/alu.v:109]
-INFO: [Synth 8-6155] done synthesizing module 'XOR' (0#1) [D:/Repos/MIPSx89/code/alu.v:109]
-INFO: [Synth 8-6157] synthesizing module 'NOR' [D:/Repos/MIPSx89/code/alu.v:116]
-INFO: [Synth 8-6155] done synthesizing module 'NOR' (0#1) [D:/Repos/MIPSx89/code/alu.v:116]
-INFO: [Synth 8-6157] synthesizing module 'LUI' [D:/Repos/MIPSx89/code/alu.v:123]
-INFO: [Synth 8-6155] done synthesizing module 'LUI' (0#1) [D:/Repos/MIPSx89/code/alu.v:123]
-INFO: [Synth 8-6157] synthesizing module 'SLT' [D:/Repos/MIPSx89/code/alu.v:130]
-INFO: [Synth 8-6155] done synthesizing module 'SLT' (0#1) [D:/Repos/MIPSx89/code/alu.v:130]
-INFO: [Synth 8-6157] synthesizing module 'SLTU' [D:/Repos/MIPSx89/code/alu.v:137]
-INFO: [Synth 8-6155] done synthesizing module 'SLTU' (0#1) [D:/Repos/MIPSx89/code/alu.v:137]
-INFO: [Synth 8-6157] synthesizing module 'SRA' [D:/Repos/MIPSx89/code/alu.v:146]
-INFO: [Synth 8-6155] done synthesizing module 'SRA' (0#1) [D:/Repos/MIPSx89/code/alu.v:146]
-INFO: [Synth 8-6157] synthesizing module 'SLLSLR' [D:/Repos/MIPSx89/code/alu.v:160]
-INFO: [Synth 8-6155] done synthesizing module 'SLLSLR' (0#1) [D:/Repos/MIPSx89/code/alu.v:160]
-INFO: [Synth 8-6157] synthesizing module 'SRL' [D:/Repos/MIPSx89/code/alu.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'SRL' (0#1) [D:/Repos/MIPSx89/code/alu.v:174]
-INFO: [Synth 8-6157] synthesizing module 'alu_selector' [D:/Repos/MIPSx89/code/alu.v:188]
-INFO: [Synth 8-226] default block is never used [D:/Repos/MIPSx89/code/alu.v:212]
-INFO: [Synth 8-6155] done synthesizing module 'alu_selector' (0#1) [D:/Repos/MIPSx89/code/alu.v:188]
-INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [D:/Repos/MIPSx89/code/alu.v:2]
-INFO: [Synth 8-6157] synthesizing module 'mult' [D:/Repos/MIPSx89/code/mult.v:2]
-INFO: [Synth 8-6157] synthesizing module 'complement32' [D:/Repos/MIPSx89/code/complement.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'complement32' (0#1) [D:/Repos/MIPSx89/code/complement.v:2]
-INFO: [Synth 8-6157] synthesizing module 'multu' [D:/Repos/MIPSx89/code/mult.v:19]
-INFO: [Synth 8-6155] done synthesizing module 'multu' (0#1) [D:/Repos/MIPSx89/code/mult.v:19]
-INFO: [Synth 8-6157] synthesizing module 'complement64' [D:/Repos/MIPSx89/code/complement.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'complement64' (0#1) [D:/Repos/MIPSx89/code/complement.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'mult' (0#1) [D:/Repos/MIPSx89/code/mult.v:2]
-INFO: [Synth 8-6157] synthesizing module 'div' [D:/Repos/MIPSx89/code/div.v:2]
-INFO: [Synth 8-6157] synthesizing module 'divu' [D:/Repos/MIPSx89/code/div.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'divu' (0#1) [D:/Repos/MIPSx89/code/div.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'div' (0#1) [D:/Repos/MIPSx89/code/div.v:2]
-INFO: [Synth 8-6157] synthesizing module 'clz' [D:/Repos/MIPSx89/code/clz.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'clz' (0#1) [D:/Repos/MIPSx89/code/clz.v:2]
-INFO: [Synth 8-6157] synthesizing module 'clo' [D:/Repos/MIPSx89/code/clo.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'clo' (0#1) [D:/Repos/MIPSx89/code/clo.v:2]
-INFO: [Synth 8-6157] synthesizing module 'mux_rf' [D:/Repos/MIPSx89/code/mux.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/mux.v:39]
-INFO: [Synth 8-6155] done synthesizing module 'mux_rf' (0#1) [D:/Repos/MIPSx89/code/mux.v:23]
-INFO: [Synth 8-6157] synthesizing module 'mux_hi' [D:/Repos/MIPSx89/code/mux.v:77]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/mux.v:89]
-INFO: [Synth 8-6155] done synthesizing module 'mux_hi' (0#1) [D:/Repos/MIPSx89/code/mux.v:77]
-INFO: [Synth 8-6157] synthesizing module 'mux_lo' [D:/Repos/MIPSx89/code/mux.v:99]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/mux.v:111]
-INFO: [Synth 8-6155] done synthesizing module 'mux_lo' (0#1) [D:/Repos/MIPSx89/code/mux.v:99]
-INFO: [Synth 8-6157] synthesizing module 'hi_lo_function' [D:/Repos/MIPSx89/code/hi_lo_function.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/hi_lo_function.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'hi_lo_function' (0#1) [D:/Repos/MIPSx89/code/hi_lo_function.v:2]
-INFO: [Synth 8-6157] synthesizing module 'extend1' [D:/Repos/MIPSx89/code/extend.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'extend1' (0#1) [D:/Repos/MIPSx89/code/extend.v:2]
-INFO: [Synth 8-6157] synthesizing module 'mux2_32' [D:/Repos/MIPSx89/code/mux.v:121]
-INFO: [Synth 8-226] default block is never used [D:/Repos/MIPSx89/code/mux.v:129]
-INFO: [Synth 8-6155] done synthesizing module 'mux2_32' (0#1) [D:/Repos/MIPSx89/code/mux.v:121]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/PipeEXE.v:162]
-INFO: [Synth 8-6155] done synthesizing module 'PipeEXE' (0#1) [D:/Repos/MIPSx89/code/PipeEXE.v:2]
-INFO: [Synth 8-6157] synthesizing module 'PipeEMreg' [D:/Repos/MIPSx89/code/PipeEMreg.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'PipeEMreg' (0#1) [D:/Repos/MIPSx89/code/PipeEMreg.v:2]
-INFO: [Synth 8-6157] synthesizing module 'PipeMEM' [D:/Repos/MIPSx89/code/PipeMEM.v:2]
-INFO: [Synth 8-6157] synthesizing module 'cpmem' [D:/Repos/MIPSx89/code/cpmem.v:5]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/cpmem.v:32]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/cpmem.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'cpmem' (0#1) [D:/Repos/MIPSx89/code/cpmem.v:5]
-INFO: [Synth 8-6157] synthesizing module 'extend8' [D:/Repos/MIPSx89/code/extend.v:14]
-INFO: [Synth 8-6155] done synthesizing module 'extend8' (0#1) [D:/Repos/MIPSx89/code/extend.v:14]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/PipeMEM.v:48]
-INFO: [Synth 8-6155] done synthesizing module 'PipeMEM' (0#1) [D:/Repos/MIPSx89/code/PipeMEM.v:2]
-INFO: [Synth 8-6157] synthesizing module 'PipeMWreg' [D:/Repos/MIPSx89/code/PipeMWreg.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'PipeMWreg' (0#1) [D:/Repos/MIPSx89/code/PipeMWreg.v:2]
-INFO: [Synth 8-6157] synthesizing module 'PipeWB' [D:/Repos/MIPSx89/code/PipeWB.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'PipeWB' (0#1) [D:/Repos/MIPSx89/code/PipeWB.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'cpu' (0#1) [D:/Repos/MIPSx89/code/cpu.v:3]
-INFO: [Synth 8-6157] synthesizing module 'imem' [D:/Repos/MIPSx89/MIPSx89.runs/synth_1/.Xil/Vivado-4672-LAPTOP-JNSJ8DCA/realtime/imem_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'imem' (0#1) [D:/Repos/MIPSx89/MIPSx89.runs/synth_1/.Xil/Vivado-4672-LAPTOP-JNSJ8DCA/realtime/imem_stub.v:5]
-WARNING: [Synth 8-689] width (12) of port connection 'a' does not match port width (11) of module 'imem' [D:/Repos/MIPSx89/code/sccomp_dataflow.v:40]
-INFO: [Synth 8-6157] synthesizing module 'memory' [D:/Repos/MIPSx89/code/memory.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'memory' (0#1) [D:/Repos/MIPSx89/code/memory.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'sccomp_dataflow' (0#1) [D:/Repos/MIPSx89/code/sccomp_dataflow.v:2]
-INFO: [Synth 8-6157] synthesizing module 'seg7x16' [D:/Repos/MIPSx89/code/seg7x16.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/seg7x16.v:67]
-INFO: [Synth 8-6155] done synthesizing module 'seg7x16' (0#1) [D:/Repos/MIPSx89/code/seg7x16.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/top.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [D:/Repos/MIPSx89/code/top.v:2]
-WARNING: [Synth 8-7137] Register regfiles_reg[0] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[1] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[2] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[3] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[4] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[5] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[6] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[7] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[8] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[10] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[17] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[18] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[19] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[20] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[21] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[22] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[23] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[24] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[25] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[26] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[27] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[28] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[29] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[30] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7137] Register regfiles_reg[31] in module cp0 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Repos/MIPSx89/code/cp0.v:101]
-WARNING: [Synth 8-7129] Port addr[31] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[30] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[29] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[28] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[27] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[26] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[25] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[24] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[23] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[22] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[21] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[20] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[19] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[18] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[17] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[16] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[15] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[14] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[13] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[12] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[11] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[10] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[9] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr[8] in module memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[31] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[30] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[29] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[28] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[27] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[26] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[25] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[24] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[23] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[22] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[21] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[20] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[19] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[18] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[17] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[16] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[15] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[14] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[13] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[12] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[11] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[10] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[9] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[8] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[7] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[6] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[5] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[4] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[3] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[2] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[1] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a[0] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[31] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[30] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[29] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[28] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[27] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[26] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[25] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[24] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[23] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[22] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[21] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[20] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[19] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[18] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[17] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b[16] in module LUI is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[31] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[30] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[29] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[28] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[27] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[26] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[25] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[24] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[23] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[22] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[21] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[20] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[19] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[18] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[17] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[16] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[15] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[14] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[13] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[12] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[11] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[10] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[9] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[8] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[7] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[6] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[5] in module mux_alu is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc[4] in module mux_alu is either unconnected or has no load
+INFO: [Synth 8-6157] synthesizing module 'top' [D:/Repos/MIPSx89/code/TOP.v:3]
+INFO: [Synth 8-6157] synthesizing module 'divider' [D:/Repos/MIPSx89/code/DIVD.v:3]
+	Parameter num bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'divider' (0#1) [D:/Repos/MIPSx89/code/DIVD.v:3]
+INFO: [Synth 8-6157] synthesizing module 'divider__parameterized0' [D:/Repos/MIPSx89/code/DIVD.v:3]
+	Parameter num bound to: 100000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'divider__parameterized0' (0#1) [D:/Repos/MIPSx89/code/DIVD.v:3]
+INFO: [Synth 8-6157] synthesizing module 'seg7' [D:/Repos/MIPSx89/code/SEG.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/SEG.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'seg7' (0#1) [D:/Repos/MIPSx89/code/SEG.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Core' [D:/Repos/MIPSx89/code/TOP.v:23]
+INFO: [Synth 8-6157] synthesizing module 'cpu' [D:/Repos/MIPSx89/code/CPU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'pc_reg' [D:/Repos/MIPSx89/code/PC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (0#1) [D:/Repos/MIPSx89/code/PC.v:3]
+INFO: [Synth 8-6157] synthesizing module 'if_id' [D:/Repos/MIPSx89/code/IF_ID.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'if_id' (0#1) [D:/Repos/MIPSx89/code/IF_ID.v:2]
+INFO: [Synth 8-6157] synthesizing module 'id' [D:/Repos/MIPSx89/code/ID.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'id' (0#1) [D:/Repos/MIPSx89/code/ID.v:3]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [D:/Repos/MIPSx89/code/REGS.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (0#1) [D:/Repos/MIPSx89/code/REGS.v:3]
+INFO: [Synth 8-6157] synthesizing module 'id_ex' [D:/Repos/MIPSx89/code/ID_EX.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'id_ex' (0#1) [D:/Repos/MIPSx89/code/ID_EX.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ex' [D:/Repos/MIPSx89/code/EX.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'ex' (0#1) [D:/Repos/MIPSx89/code/EX.v:2]
+INFO: [Synth 8-6157] synthesizing module 'ex_mem' [D:/Repos/MIPSx89/code/EX_MEM.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ex_mem' (0#1) [D:/Repos/MIPSx89/code/EX_MEM.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mem' [D:/Repos/MIPSx89/code/MEM.v:2]
+INFO: [Synth 8-226] default block is never used [D:/Repos/MIPSx89/code/MEM.v:124]
+INFO: [Synth 8-226] default block is never used [D:/Repos/MIPSx89/code/MEM.v:150]
+INFO: [Synth 8-226] default block is never used [D:/Repos/MIPSx89/code/MEM.v:220]
+INFO: [Synth 8-226] default block is never used [D:/Repos/MIPSx89/code/MEM.v:243]
+INFO: [Synth 8-226] default block is never used [D:/Repos/MIPSx89/code/MEM.v:275]
+INFO: [Synth 8-226] default block is never used [D:/Repos/MIPSx89/code/MEM.v:321]
+INFO: [Synth 8-226] default block is never used [D:/Repos/MIPSx89/code/MEM.v:347]
+INFO: [Synth 8-6155] done synthesizing module 'mem' (0#1) [D:/Repos/MIPSx89/code/MEM.v:2]
+WARNING: [Synth 8-689] width (4) of port connection 'mem_ce_o' does not match port width (1) of module 'mem' [D:/Repos/MIPSx89/code/CPU.v:415]
+INFO: [Synth 8-6157] synthesizing module 'mem_wb' [D:/Repos/MIPSx89/code/MEM_WB.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'mem_wb' (0#1) [D:/Repos/MIPSx89/code/MEM_WB.v:2]
+INFO: [Synth 8-6157] synthesizing module 'hilo_reg' [D:/Repos/MIPSx89/code/HILO.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'hilo_reg' (0#1) [D:/Repos/MIPSx89/code/HILO.v:2]
+INFO: [Synth 8-6157] synthesizing module 'ctrl' [D:/Repos/MIPSx89/code/CTRL.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl' (0#1) [D:/Repos/MIPSx89/code/CTRL.v:3]
+INFO: [Synth 8-6157] synthesizing module 'div' [D:/Repos/MIPSx89/code/DIV.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'div' (0#1) [D:/Repos/MIPSx89/code/DIV.v:3]
+INFO: [Synth 8-6157] synthesizing module 'LLbit_reg' [D:/Repos/MIPSx89/code/LLBIT.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'LLbit_reg' (0#1) [D:/Repos/MIPSx89/code/LLBIT.v:3]
+INFO: [Synth 8-6157] synthesizing module 'cp0_reg' [D:/Repos/MIPSx89/code/CP0.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Repos/MIPSx89/code/CP0.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'cp0_reg' (0#1) [D:/Repos/MIPSx89/code/CP0.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'cpu' (0#1) [D:/Repos/MIPSx89/code/CPU.v:3]
+WARNING: [Synth 8-689] width (1) of port connection 'ram_ce_o' does not match port width (4) of module 'cpu' [D:/Repos/MIPSx89/code/TOP.v:54]
+INFO: [Synth 8-638] synthesizing module 'dist_mem_gen_0' [d:/Repos/MIPSx89/MIPSx89.gen/sources_1/ip/dist_mem_gen_0/synth/dist_mem_gen_0.vhd:66]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_ADDR_WIDTH bound to: 11 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_DEPTH bound to: 2048 - type: integer 
+	Parameter C_HAS_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_D bound to: 0 - type: integer 
+	Parameter C_HAS_DPO bound to: 0 - type: integer 
+	Parameter C_HAS_DPRA bound to: 0 - type: integer 
+	Parameter C_HAS_I_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_SPO bound to: 1 - type: integer 
+	Parameter C_HAS_WE bound to: 0 - type: integer 
+	Parameter C_MEM_INIT_FILE bound to: dist_mem_gen_0.mif - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_MEM_TYPE bound to: 0 - type: integer 
+	Parameter C_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_QCE_JOINED bound to: 0 - type: integer 
+	Parameter C_QUALIFY_WE bound to: 0 - type: integer 
+	Parameter C_READ_MIF bound to: 1 - type: integer 
+	Parameter C_REG_A_D_INPUTS bound to: 0 - type: integer 
+	Parameter C_REG_DPRA_INPUT bound to: 0 - type: integer 
+	Parameter C_SYNC_ENABLE bound to: 1 - type: integer 
+	Parameter C_WIDTH bound to: 32 - type: integer 
+	Parameter C_PARSER_TYPE bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dist_mem_gen_v8_0_13' declared at 'd:/Repos/MIPSx89/MIPSx89.gen/sources_1/ip/dist_mem_gen_0/hdl/dist_mem_gen_v8_0_vhsyn_rfs.vhd:3237' bound to instance 'U0' of component 'dist_mem_gen_v8_0_13' [d:/Repos/MIPSx89/MIPSx89.gen/sources_1/ip/dist_mem_gen_0/synth/dist_mem_gen_0.vhd:132]
+INFO: [Synth 8-256] done synthesizing module 'dist_mem_gen_0' (0#1) [d:/Repos/MIPSx89/MIPSx89.gen/sources_1/ip/dist_mem_gen_0/synth/dist_mem_gen_0.vhd:66]
+INFO: [Synth 8-6157] synthesizing module 'dmem' [D:/Repos/MIPSx89/code/DMEM.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'dmem' (0#1) [D:/Repos/MIPSx89/code/DMEM.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Core' (0#1) [D:/Repos/MIPSx89/code/TOP.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [D:/Repos/MIPSx89/code/TOP.v:3]
+WARNING: [Synth 8-6014] Unused sequential element temp_op1_reg was removed.  [D:/Repos/MIPSx89/code/DIV.v:48]
+WARNING: [Synth 8-6014] Unused sequential element temp_op2_reg was removed.  [D:/Repos/MIPSx89/code/DIV.v:53]
+WARNING: [Synth 8-7129] Port addr_in[31] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[30] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[29] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[28] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[27] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[26] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[25] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[24] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[23] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[22] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[21] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[20] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[19] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[18] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[17] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[16] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[15] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[14] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[13] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[12] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[11] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[1] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_in[0] in module dmem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[31] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[30] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[29] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[28] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[27] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[26] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[25] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[24] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[23] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[22] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[21] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[20] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[19] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[18] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[17] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[16] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[15] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[14] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[13] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[12] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[11] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[10] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[9] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[8] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[7] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[6] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[5] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[4] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[3] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[2] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[1] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo[0] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo_ce in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo_rst in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qspo_srst in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[31] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[30] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[29] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[28] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[27] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[26] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[25] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[24] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[23] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[22] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[21] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[20] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[19] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[18] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[17] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[16] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[15] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[14] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[13] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[12] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[11] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[10] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[9] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[8] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[7] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[6] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[5] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[4] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[3] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[2] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[1] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dpo[0] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qdpo[31] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qdpo[30] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qdpo[29] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qdpo[28] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qdpo[27] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qdpo[26] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qdpo[25] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qdpo[24] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+WARNING: [Synth 8-7129] Port qdpo[23] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1311.898 ; gain = 17.879
+Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1311.898 ; gain = 17.879
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1311.898 ; gain = 17.879
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.270 . Memory (MB): peak = 1311.898 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.332 . Memory (MB): peak = 1921.953 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/Repos/MIPSx89/MIPSx89.gen/sources_1/ip/imem/imem/imem_in_context.xdc] for cell 'cpu/IMEM'
-Finished Parsing XDC File [d:/Repos/MIPSx89/MIPSx89.gen/sources_1/ip/imem/imem/imem_in_context.xdc] for cell 'cpu/IMEM'
-Parsing XDC File [D:/Repos/MIPSx89/code/constraints.xdc]
-Finished Parsing XDC File [D:/Repos/MIPSx89/code/constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Repos/MIPSx89/code/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [D:/Repos/MIPSx89/code/TOP.xdc]
+Finished Parsing XDC File [D:/Repos/MIPSx89/code/TOP.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Repos/MIPSx89/code/TOP.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/Repos/MIPSx89/MIPSx89.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Repos/MIPSx89/MIPSx89.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1407.551 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1921.953 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1407.551 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.106 . Memory (MB): peak = 1921.953 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1407.551 ; gain = 113.531
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1407.551 ; gain = 113.531
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for cpu/IMEM. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Core_0/imem_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1407.551 ; gain = 113.531
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'predictor'
-WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [D:/Repos/MIPSx89/code/mux.v:15]
-WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [D:/Repos/MIPSx89/code/DEC.v:37]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'div'
+WARNING: [Synth 8-327] inferring latch for variable 'reg1_o_reg' [D:/Repos/MIPSx89/code/ID.v:676]
+WARNING: [Synth 8-327] inferring latch for variable 'reg2_o_reg' [D:/Repos/MIPSx89/code/ID.v:698]
+WARNING: [Synth 8-327] inferring latch for variable 'cp0_reg_read_addr_o_reg' [D:/Repos/MIPSx89/code/EX.v:422]
+WARNING: [Synth 8-327] inferring latch for variable 'hilo_temp1_reg' [D:/Repos/MIPSx89/code/EX.v:310]
+WARNING: [Synth 8-327] inferring latch for variable 'hilo_temp_o_reg' [D:/Repos/MIPSx89/code/EX.v:299]
+WARNING: [Synth 8-327] inferring latch for variable 'cnt_o_reg' [D:/Repos/MIPSx89/code/EX.v:300]
+WARNING: [Synth 8-327] inferring latch for variable 'stallreq_for_madd_msub_reg' [D:/Repos/MIPSx89/code/EX.v:301]
+WARNING: [Synth 8-327] inferring latch for variable 'cp0_cause_reg' [D:/Repos/MIPSx89/code/MEM.v:414]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_data_o_reg' [D:/Repos/MIPSx89/code/MEM.v:96]
+WARNING: [Synth 8-327] inferring latch for variable 'new_pc_reg' [D:/Repos/MIPSx89/code/CTRL.v:18]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                      s2 |                               00 |                               10
-                      s3 |                               01 |                               11
-                      s1 |                               10 |                               01
-                      s0 |                               11 |                               00
+                 iSTATE1 |                               00 |                               00
+                 iSTATE0 |                               01 |                               01
+                  iSTATE |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'predictor'
-WARNING: [Synth 8-327] inferring latch for variable 'DMEM_wena_reg' [D:/Repos/MIPSx89/code/cu.v:90]
-WARNING: [Synth 8-327] inferring latch for variable 'data_type_reg' [D:/Repos/MIPSx89/code/cu.v:91]
-WARNING: [Synth 8-327] inferring latch for variable 'CBW_sign_reg' [D:/Repos/MIPSx89/code/cu.v:92]
-WARNING: [Synth 8-327] inferring latch for variable 'mux_pc_reg' [D:/Repos/MIPSx89/code/cu.v:94]
-WARNING: [Synth 8-327] inferring latch for variable 'mux_rf_reg' [D:/Repos/MIPSx89/code/cu.v:95]
-WARNING: [Synth 8-327] inferring latch for variable 'mux_rf_DMEM_reg' [D:/Repos/MIPSx89/code/cu.v:96]
-WARNING: [Synth 8-327] inferring latch for variable 'mux_alu_reg' [D:/Repos/MIPSx89/code/cu.v:97]
-WARNING: [Synth 8-327] inferring latch for variable 'mux_hi_reg' [D:/Repos/MIPSx89/code/cu.v:98]
-WARNING: [Synth 8-327] inferring latch for variable 'mux_lo_reg' [D:/Repos/MIPSx89/code/cu.v:99]
-WARNING: [Synth 8-327] inferring latch for variable 'rf_wena_reg' [D:/Repos/MIPSx89/code/cu.v:100]
-WARNING: [Synth 8-327] inferring latch for variable 'mov_cond_reg' [D:/Repos/MIPSx89/code/cu.v:101]
-WARNING: [Synth 8-327] inferring latch for variable 'rf_waddr_reg' [D:/Repos/MIPSx89/code/cu.v:102]
-WARNING: [Synth 8-327] inferring latch for variable 'alu_aluc_reg' [D:/Repos/MIPSx89/code/cu.v:103]
-WARNING: [Synth 8-327] inferring latch for variable 'hi_ena_reg' [D:/Repos/MIPSx89/code/cu.v:104]
-WARNING: [Synth 8-327] inferring latch for variable 'lo_ena_reg' [D:/Repos/MIPSx89/code/cu.v:105]
-WARNING: [Synth 8-327] inferring latch for variable 'hi_lo_func_reg' [D:/Repos/MIPSx89/code/cu.v:106]
-WARNING: [Synth 8-327] inferring latch for variable 'EXT1_n_c_reg' [D:/Repos/MIPSx89/code/cu.v:107]
-WARNING: [Synth 8-327] inferring latch for variable 'EXT16_sign_reg' [D:/Repos/MIPSx89/code/cu.v:108]
-WARNING: [Synth 8-327] inferring latch for variable 'exception_reg' [D:/Repos/MIPSx89/code/cu.v:89]
-WARNING: [Synth 8-327] inferring latch for variable 'cause_reg' [D:/Repos/MIPSx89/code/cu.v:109]
-WARNING: [Synth 8-327] inferring latch for variable 'blockade_reg' [D:/Repos/MIPSx89/code/cu.v:110]
-WARNING: [Synth 8-327] inferring latch for variable 'branch_flag_reg' [D:/Repos/MIPSx89/code/cu.v:111]
-WARNING: [Synth 8-327] inferring latch for variable 'branch_fail_pc_reg' [D:/Repos/MIPSx89/code/cu.v:112]
-WARNING: [Synth 8-327] inferring latch for variable 'LLbit_idata_reg' [D:/Repos/MIPSx89/code/cu.v:113]
-WARNING: [Synth 8-327] inferring latch for variable 'LLbit_wena_reg' [D:/Repos/MIPSx89/code/cu.v:114]
-WARNING: [Synth 8-327] inferring latch for variable 'o_rdata1_reg' [D:/Repos/MIPSx89/code/direct.v:47]
-WARNING: [Synth 8-327] inferring latch for variable 'o_rdata2_reg' [D:/Repos/MIPSx89/code/direct.v:75]
-WARNING: [Synth 8-327] inferring latch for variable 'exc_addr_reg' [D:/Repos/MIPSx89/code/cp0.v:51]
-WARNING: [Synth 8-327] inferring latch for variable 'a_reg' [D:/Repos/MIPSx89/code/mux.v:68]
-WARNING: [Synth 8-327] inferring latch for variable 'b_reg' [D:/Repos/MIPSx89/code/mux.v:68]
-WARNING: [Synth 8-327] inferring latch for variable 'carry_reg' [D:/Repos/MIPSx89/code/alu.v:213]
-WARNING: [Synth 8-327] inferring latch for variable 'overflow_reg' [D:/Repos/MIPSx89/code/alu.v:214]
-WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [D:/Repos/MIPSx89/code/mux.v:40]
-WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [D:/Repos/MIPSx89/code/mux.v:90]
-WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [D:/Repos/MIPSx89/code/mux.v:112]
-WARNING: [Synth 8-327] inferring latch for variable 'data_result_reg' [D:/Repos/MIPSx89/code/hi_lo_function.v:21]
-WARNING: [Synth 8-327] inferring latch for variable 'branch_predict_success_reg' [D:/Repos/MIPSx89/code/PipeEXE.v:164]
-WARNING: [Synth 8-327] inferring latch for variable 'branch_predict_fail_reg' [D:/Repos/MIPSx89/code/PipeEXE.v:165]
-WARNING: [Synth 8-327] inferring latch for variable 'rdata32_reg' [D:/Repos/MIPSx89/code/cpmem.v:28]
-WARNING: [Synth 8-327] inferring latch for variable 'rdata16_reg' [D:/Repos/MIPSx89/code/cpmem.v:34]
-WARNING: [Synth 8-327] inferring latch for variable 'rdata8_reg' [D:/Repos/MIPSx89/code/cpmem.v:46]
-WARNING: [Synth 8-327] inferring latch for variable 'wdata_reg' [D:/Repos/MIPSx89/code/cpmem.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'o_DMEM_rdata_reg' [D:/Repos/MIPSx89/code/PipeMEM.v:50]
-WARNING: [Synth 8-327] inferring latch for variable 'show_reg' [D:/Repos/MIPSx89/code/top.v:25]
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'div'
+WARNING: [Synth 8-327] inferring latch for variable 'data_o_reg' [D:/Repos/MIPSx89/code/CP0.v:156]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1407.551 ; gain = 113.531
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input   64 Bit       Adders := 3     
-	  32 Input   64 Bit       Adders := 2     
-	   2 Input   64 Bit       Adders := 1     
-	   3 Input   63 Bit       Adders := 62    
-	   2 Input   33 Bit       Adders := 1     
-	   2 Input   32 Bit       Adders := 18    
-	   3 Input   32 Bit       Adders := 2     
+	   2 Input   64 Bit       Adders := 4     
+	   3 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 15    
+	   2 Input    6 Bit       Adders := 2     
 	   2 Input    3 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
-	   2 Input      1 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 3     
 +---Registers : 
-	               32 Bit    Registers := 311   
-	                8 Bit    Registers := 5     
-	                5 Bit    Registers := 3     
-	                4 Bit    Registers := 6     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 1114  
+	               65 Bit    Registers := 1     
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 33    
+	                8 Bit    Registers := 2051  
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 5     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 18    
++---RAMs : 
+	             1024 Bit	(32 X 32 bit)          RAMs := 1     
 +---Muxes : 
-	   2 Input   64 Bit        Muxes := 67    
-	   6 Input   64 Bit        Muxes := 3     
-	   2 Input   63 Bit        Muxes := 62    
-	   2 Input   32 Bit        Muxes := 42    
+	   2 Input   65 Bit        Muxes := 5     
+	   4 Input   65 Bit        Muxes := 2     
+	   2 Input   64 Bit        Muxes := 10    
+	   3 Input   64 Bit        Muxes := 2     
+	   4 Input   64 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 81    
+	  11 Input   32 Bit        Muxes := 3     
+	   8 Input   32 Bit        Muxes := 1     
+	  33 Input   32 Bit        Muxes := 3     
+	   5 Input   32 Bit        Muxes := 3     
+	   4 Input   32 Bit        Muxes := 7     
+	   3 Input   32 Bit        Muxes := 4     
+	   9 Input   32 Bit        Muxes := 1     
+	  15 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 2     
 	   6 Input   32 Bit        Muxes := 3     
-	  14 Input   32 Bit        Muxes := 1     
-	   3 Input   32 Bit        Muxes := 2     
-	   5 Input   32 Bit        Muxes := 1     
-	   4 Input   32 Bit        Muxes := 6     
-	   2 Input   24 Bit        Muxes := 1     
+	   7 Input   24 Bit        Muxes := 1     
 	   3 Input   16 Bit        Muxes := 1     
-	  11 Input    8 Bit        Muxes := 1     
-	  75 Input    8 Bit        Muxes := 1     
-	  85 Input    8 Bit        Muxes := 3     
-	   6 Input    8 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 1     
-	   4 Input    8 Bit        Muxes := 1     
-	   8 Input    8 Bit        Muxes := 1     
-	  33 Input    6 Bit        Muxes := 1     
-	   8 Input    6 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 26    
-	   4 Input    5 Bit        Muxes := 1     
-	   2 Input    5 Bit        Muxes := 4     
-	   5 Input    5 Bit        Muxes := 1     
-	  85 Input    4 Bit        Muxes := 6     
-	   2 Input    4 Bit        Muxes := 3     
-	   4 Input    4 Bit        Muxes := 1     
-	  85 Input    3 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 2     
+	  33 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 6     
+	   4 Input    8 Bit        Muxes := 2     
+	  28 Input    7 Bit        Muxes := 1     
+	   8 Input    7 Bit        Muxes := 1     
+	  11 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 13    
+	  11 Input    5 Bit        Muxes := 1     
+	   4 Input    5 Bit        Muxes := 3     
+	  15 Input    4 Bit        Muxes := 2     
+	   8 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 3     
+	   3 Input    4 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 5     
+	   8 Input    3 Bit        Muxes := 5     
+	  28 Input    3 Bit        Muxes := 1     
+	  11 Input    3 Bit        Muxes := 1     
+	  33 Input    3 Bit        Muxes := 5     
+	   2 Input    3 Bit        Muxes := 6     
+	   4 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 2     
+	  33 Input    2 Bit        Muxes := 1     
+	  27 Input    2 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 4     
-	  85 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 309   
-	   6 Input    1 Bit        Muxes := 12    
-	  14 Input    1 Bit        Muxes := 4     
-	  12 Input    1 Bit        Muxes := 1     
-	   7 Input    1 Bit        Muxes := 1     
-	  11 Input    1 Bit        Muxes := 1     
-	   3 Input    1 Bit        Muxes := 31    
-	  75 Input    1 Bit        Muxes := 1     
-	  85 Input    1 Bit        Muxes := 15    
+	   2 Input    2 Bit        Muxes := 7     
+	   3 Input    2 Bit        Muxes := 1     
+	   7 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 585   
+	  28 Input    1 Bit        Muxes := 4     
+	   8 Input    1 Bit        Muxes := 11    
+	  11 Input    1 Bit        Muxes := 4     
+	  33 Input    1 Bit        Muxes := 4     
+	   4 Input    1 Bit        Muxes := 11    
 	   5 Input    1 Bit        Muxes := 3     
-	   4 Input    1 Bit        Muxes := 2     
+	   7 Input    1 Bit        Muxes := 4     
+	   6 Input    1 Bit        Muxes := 5     
+	   3 Input    1 Bit        Muxes := 4     
+	  15 Input    1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -493,31 +394,79 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3332] Sequential element (data_type_reg[3]) is unused and will be removed from module cu.
-WARNING: [Synth 8-3332] Sequential element (mux_rf_reg[7]) is unused and will be removed from module cu.
-WARNING: [Synth 8-3332] Sequential element (mux_alu_reg[3]) is unused and will be removed from module cu.
-WARNING: [Synth 8-3332] Sequential element (mux_hi_reg[7]) is unused and will be removed from module cu.
-WARNING: [Synth 8-3332] Sequential element (mux_lo_reg[7]) is unused and will be removed from module cu.
-WARNING: [Synth 8-3332] Sequential element (cause_reg[4]) is unused and will be removed from module cu.
-WARNING: [Synth 8-3332] Sequential element (LLbit_idata_reg) is unused and will be removed from module cu.
-WARNING: [Synth 8-3332] Sequential element (mov_cond_reg[3]) is unused and will be removed from module cu.
+DSP Report: Generating DSP hilo_temp, operation Mode is: A*B.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: Generating DSP hilo_temp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: Generating DSP hilo_temp, operation Mode is: A*B.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: Generating DSP hilo_temp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[31]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[30]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[29]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[28]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[27]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[26]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[25]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[24]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[23]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[22]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[21]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[20]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[19]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[18]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[17]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[16]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[11]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[7]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[6]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[5]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[4]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[3]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[2]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[1]) is unused and will be removed from module mem.
+WARNING: [Synth 8-3332] Sequential element (cp0_cause_reg[0]) is unused and will be removed from module mem.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:01:05 . Memory (MB): peak = 1421.867 ; gain = 127.848
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:20 ; elapsed = 00:01:23 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 ROM: Preliminary Mapping Report
-+------------+-------------+---------------+----------------+
-|Module Name | RTL Object  | Depth x Width | Implemented As | 
-+------------+-------------+---------------+----------------+
-|cu          | mux_rf_DMEM | 128x1         | LUT            | 
-|cu          | mux_alu     | 128x4         | LUT            | 
-|cu          | rf_wena     | 128x1         | LUT            | 
-|cu          | alu_aluc    | 128x4         | LUT            | 
-+------------+-------------+---------------+----------------+
++---------------------+--------------------------------------------------------+---------------+----------------+
+|Module Name          | RTL Object                                             | Depth x Width | Implemented As | 
++---------------------+--------------------------------------------------------+---------------+----------------+
+|rom                  | rom[2047]                                              | 2048x32       | LUT            | 
+|dist_mem_gen_v8_0_13 | synth_options.dist_mem_inst/gen_rom.rom_inst/rom[2047] | 2048x32       | LUT            | 
++---------------------+--------------------------------------------------------+---------------+----------------+
 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-------------------------+------------+-----------+----------------------+--------------+
+|Module Name              | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++-------------------------+------------+-----------+----------------------+--------------+
+|Core_0i_3/cpu_0/regfile1 | regs_reg   | Implied   | 32 x 32              | RAM32M x 12  | 
++-------------------------+------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ex          | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex          | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex          | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex          | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -525,19 +474,33 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1421.867 ; gain = 127.848
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:27 ; elapsed = 00:01:30 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1421.867 ; gain = 127.848
+Finished Timing Optimization : Time (s): cpu = 00:01:29 ; elapsed = 00:01:32 . Memory (MB): peak = 1921.953 ; gain = 639.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++-------------------------+------------+-----------+----------------------+--------------+
+|Module Name              | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++-------------------------+------------+-----------+----------------------+--------------+
+|Core_0i_3/cpu_0/regfile1 | regs_reg   | Implied   | 32 x 32              | RAM32M x 12  | 
++-------------------------+------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:01:15 . Memory (MB): peak = 1442.949 ; gain = 148.930
+Finished Technology Mapping : Time (s): cpu = 00:01:37 ; elapsed = 00:01:40 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -555,97 +518,110 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:19 ; elapsed = 00:01:22 . Memory (MB): peak = 1448.539 ; gain = 154.520
+Finished IO Insertion : Time (s): cpu = 00:01:43 ; elapsed = 00:01:46 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 1448.539 ; gain = 154.520
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:43 ; elapsed = 00:01:46 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:22 ; elapsed = 00:01:24 . Memory (MB): peak = 1448.539 ; gain = 154.520
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:22 ; elapsed = 00:01:24 . Memory (MB): peak = 1448.539 ; gain = 154.520
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:47 ; elapsed = 00:01:49 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:22 ; elapsed = 00:01:25 . Memory (MB): peak = 1448.539 ; gain = 154.520
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:48 ; elapsed = 00:01:50 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:22 ; elapsed = 00:01:25 . Memory (MB): peak = 1448.539 ; gain = 154.520
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:48 ; elapsed = 00:01:51 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ex          | A*B          | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex          | PCIN>>17+A*B | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex          | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex          | PCIN>>17+A*B | 17     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
 Report BlackBoxes: 
-+------+--------------+----------+
-|      |BlackBox name |Instances |
-+------+--------------+----------+
-|1     |imem          |         1|
-+------+--------------+----------+
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |imem   |     1|
-|2     |BUFG   |    12|
-|3     |CARRY4 |  1827|
-|4     |LUT1   |   353|
-|5     |LUT2   |  2851|
-|6     |LUT3   |  2693|
-|7     |LUT4   |  2828|
-|8     |LUT5   |  2895|
-|9     |LUT6   |  7698|
-|10    |MUXF7  |  1500|
-|11    |MUXF8  |   672|
-|12    |FDCE   |  1522|
-|13    |FDPE   |    29|
-|14    |FDRE   |  9635|
-|15    |LD     |   638|
-|16    |LDC    |    52|
-|17    |LDP    |     3|
-|18    |IBUF   |    10|
-|19    |OBUF   |    16|
-+------+-------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |    10|
+|2     |CARRY4   |   223|
+|3     |DSP48E1  |     4|
+|4     |LUT1     |   202|
+|5     |LUT2     |   642|
+|6     |LUT3     |   368|
+|7     |LUT4     |   542|
+|8     |LUT5     |  2528|
+|9     |LUT6     |  7744|
+|10    |MUXF7    |  2363|
+|11    |MUXF8    |   804|
+|12    |RAM32M   |    10|
+|13    |RAM32X1D |     4|
+|14    |FDCE     |   116|
+|15    |FDPE     |     7|
+|16    |FDRE     | 17460|
+|17    |FDSE     |     2|
+|18    |LD       |    69|
+|19    |LDC      |   423|
+|20    |IBUF     |     5|
+|21    |OBUF     |    16|
++------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:22 ; elapsed = 00:01:25 . Memory (MB): peak = 1448.539 ; gain = 154.520
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:48 ; elapsed = 00:01:51 . Memory (MB): peak = 1921.953 ; gain = 639.426
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 55 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:12 ; elapsed = 00:01:21 . Memory (MB): peak = 1448.539 ; gain = 58.867
-Synthesis Optimization Complete : Time (s): cpu = 00:01:23 ; elapsed = 00:01:25 . Memory (MB): peak = 1448.539 ; gain = 154.520
+Synthesis finished with 0 errors, 0 critical warnings and 37 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:27 ; elapsed = 00:01:46 . Memory (MB): peak = 1921.953 ; gain = 639.426
+Synthesis Optimization Complete : Time (s): cpu = 00:01:48 ; elapsed = 00:01:51 . Memory (MB): peak = 1921.953 ; gain = 639.426
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.449 . Memory (MB): peak = 1463.805 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 4692 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.362 . Memory (MB): peak = 1921.953 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3900 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1478.137 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1921.953 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 693 instances were transformed.
-  LD => LDCE: 638 instances
-  LDC => LDCE: 52 instances
-  LDP => LDPE: 3 instances
+  A total of 506 instances were transformed.
+  LD => LDCE: 69 instances
+  LDC => LDCE: 423 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
 
-Synth Design complete, checksum: 2fc6b3c6
+Synth Design complete, checksum: a214b20c
 INFO: [Common 17-83] Releasing license: Synthesis
-170 Infos, 181 Warnings, 0 Critical Warnings and 0 Errors encountered.
+78 Infos, 141 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1478.137 ; gain = 184.117
+synth_design: Time (s): cpu = 00:01:55 ; elapsed = 00:02:00 . Memory (MB): peak = 1921.953 ; gain = 639.426
 INFO: [Common 17-1381] The checkpoint 'D:/Repos/MIPSx89/MIPSx89.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Apr  2 21:35:04 2023...
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  9 16:12:45 2023...

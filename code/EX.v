@@ -1,15 +1,6 @@
-`include "D:\Ray\Vivado\DoCPU_89\DoCPU_89.srcs\sources_1\new\defines.v"
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Usage    执行阶段
-// Vision   0.0
-// Auther   Ray
-//////////////////////////////////////////////////////////////////////////////////
-
 module ex(
-
-	input wire										rst,
-	
+	input wire					  rst,
 	//送到执行阶段的信息
 	input wire[`AluOpBus]         aluop_i,
 	input wire[`AluSelBus]        alusel_i,
@@ -20,78 +11,60 @@ module ex(
 	input wire[`RegBus]           inst_i,
 	input wire[31:0]              excepttype_i,
 	input wire[`RegBus]          current_inst_address_i,
-	
 	//HI、LO寄存器的值
 	input wire[`RegBus]           hi_i,
 	input wire[`RegBus]           lo_i,
-
 	//回写阶段的指令是否要写HI、LO，用于检测HI、LO的数据相关
 	input wire[`RegBus]           wb_hi_i,
 	input wire[`RegBus]           wb_lo_i,
 	input wire                    wb_whilo_i,
-	
 	//访存阶段的指令是否要写HI、LO，用于检测HI、LO的数据相关
 	input wire[`RegBus]           mem_hi_i,
 	input wire[`RegBus]           mem_lo_i,
 	input wire                    mem_whilo_i,
-
 	input wire[`DoubleRegBus]     hilo_temp_i,
 	input wire[1:0]               cnt_i,
-
 	//与除法模块相连
-	input wire[`DoubleRegBus]     div_result_i,
+	input wire[`DoubleRegBus]     div_ret_i,
 	input wire                    div_ready_i,
-
 	//是否转移、以及link address
 	input wire[`RegBus]           link_address_i,
 	input wire                    is_in_delayslot_i,	
-
 	//访存阶段的指令是否要写CP0，用来检测数据相关
-  input wire                    mem_cp0_reg_we,
+  	input wire                    mem_cp0_reg_we,
 	input wire[4:0]               mem_cp0_reg_write_addr,
 	input wire[`RegBus]           mem_cp0_reg_data,
-	
 	//回写阶段的指令是否要写CP0，用来检测数据相关
-  input wire                    wb_cp0_reg_we,
+  	input wire                    wb_cp0_reg_we,
 	input wire[4:0]               wb_cp0_reg_write_addr,
 	input wire[`RegBus]           wb_cp0_reg_data,
-
 	//与CP0相连，读取其中CP0寄存器的值
 	input wire[`RegBus]           cp0_reg_data_i,
 	output reg[4:0]               cp0_reg_read_addr_o,
-
 	//向下一流水级传递，用于写CP0中的寄存器
 	output reg                    cp0_reg_we_o,
 	output reg[4:0]               cp0_reg_write_addr_o,
 	output reg[`RegBus]           cp0_reg_data_o,
-	
 	output reg[`RegAddrBus]       wd_o,
 	output reg                    wreg_o,
-	output reg[`RegBus]						wdata_o,
-
+	output reg[`RegBus]			  wdata_o,
 	output reg[`RegBus]           hi_o,
 	output reg[`RegBus]           lo_o,
 	output reg                    whilo_o,
-	
 	output reg[`DoubleRegBus]     hilo_temp_o,
 	output reg[1:0]               cnt_o,
-
 	output reg[`RegBus]           div_opdata1_o,
 	output reg[`RegBus]           div_opdata2_o,
 	output reg                    div_start_o,
 	output reg                    signed_div_o,
-
-	//下面新增的几个输出是为加载、存储指令准备的
+	//加载、存储指令输出
 	output wire[`AluOpBus]        aluop_o,
 	output wire[`RegBus]          mem_addr_o,
 	output wire[`RegBus]          reg2_o,
-	
 	output wire[31:0]             excepttype_o,
 	output wire                   is_in_delayslot_o,
-	output wire[`RegBus]          current_inst_address_o,	
-
-	output reg										stallreq       			
-	
+	output wire[`RegBus]          current_inst_address_o,
+	output reg					  stallreq       			
 );
 
 	reg[`RegBus] logicout;
@@ -103,7 +76,7 @@ module ex(
 	reg[`RegBus] LO;
 	wire[`RegBus] reg2_i_mux;
 	wire[`RegBus] reg1_i_not;	
-	wire[`RegBus] result_sum;
+	wire[`RegBus] ret_sum;
 	wire ov_sum;
 	wire reg1_eq_reg2;
 	wire reg1_lt_reg2;
@@ -182,17 +155,17 @@ module ex(
 	                       (aluop_i == `EXE_TGEI_OP)) 
 											 ? (~reg2_i)+1 : reg2_i;
 
-	assign result_sum = reg1_i + reg2_i_mux;										 
+	assign ret_sum = reg1_i + reg2_i_mux;										 
 
-	assign ov_sum = ((!reg1_i[31] && !reg2_i_mux[31]) && result_sum[31]) ||
-									((reg1_i[31] && reg2_i_mux[31]) && (!result_sum[31]));  
+	assign ov_sum = ((!reg1_i[31] && !reg2_i_mux[31]) && ret_sum[31]) ||
+									((reg1_i[31] && reg2_i_mux[31]) && (!ret_sum[31]));  
 									
 	assign reg1_lt_reg2 = ((aluop_i == `EXE_SLT_OP) || (aluop_i == `EXE_TLT_OP) ||
 	                       (aluop_i == `EXE_TLTI_OP) || (aluop_i == `EXE_TGE_OP) ||
 	                       (aluop_i == `EXE_TGEI_OP)) ?
 												 ((reg1_i[31] && !reg2_i[31]) || 
-												 (!reg1_i[31] && !reg2_i[31] && result_sum[31])||
-			                   (reg1_i[31] && reg2_i[31] && result_sum[31]))
+												 (!reg1_i[31] && !reg2_i[31] && ret_sum[31])||
+			                   (reg1_i[31] && reg2_i[31] && ret_sum[31]))
 			                   :	(reg1_i < reg2_i);
   
   assign reg1_i_not = ~reg1_i;
@@ -206,10 +179,10 @@ module ex(
 					arithmeticres <= reg1_lt_reg2 ;
 				end
 				`EXE_ADD_OP, `EXE_ADDU_OP, `EXE_ADDI_OP, `EXE_ADDIU_OP:		begin
-					arithmeticres <= result_sum; 
+					arithmeticres <= ret_sum; 
 				end
 				`EXE_SUB_OP, `EXE_SUBU_OP:		begin
-					arithmeticres <= result_sum; 
+					arithmeticres <= ret_sum; 
 				end		
 				`EXE_CLZ_OP:		begin
 					arithmeticres <= reg1_i[31] ? 0 : reg1_i[30] ? 1 : reg1_i[29] ? 2 :
@@ -379,13 +352,13 @@ module ex(
 			signed_div_o <= 1'b0;	
 			case (aluop_i) 
 				`EXE_DIV_OP:		begin
-					if(div_ready_i == `DivResultNotReady) begin
+					if(div_ready_i == `DivretNotReady) begin
 	    			div_opdata1_o <= reg1_i;
 						div_opdata2_o <= reg2_i;
 						div_start_o <= `DivStart;
 						signed_div_o <= 1'b1;
 						stallreq_for_div <= `Stop;
-					end else if(div_ready_i == `DivResultReady) begin
+					end else if(div_ready_i == `DivretReady) begin
 	    			div_opdata1_o <= reg1_i;
 						div_opdata2_o <= reg2_i;
 						div_start_o <= `DivStop;
@@ -400,13 +373,13 @@ module ex(
 					end					
 				end
 				`EXE_DIVU_OP:		begin
-					if(div_ready_i == `DivResultNotReady) begin
+					if(div_ready_i == `DivretNotReady) begin
 	    			div_opdata1_o <= reg1_i;
 						div_opdata2_o <= reg2_i;
 						div_start_o <= `DivStart;
 						signed_div_o <= 1'b0;
 						stallreq_for_div <= `Stop;
-					end else if(div_ready_i == `DivResultReady) begin
+					end else if(div_ready_i == `DivretReady) begin
 	    			div_opdata1_o <= reg1_i;
 						div_opdata2_o <= reg2_i;
 						div_start_o <= `DivStop;
@@ -518,8 +491,8 @@ module ex(
 			lo_o <= hilo_temp1[31:0];		
 		end else if((aluop_i == `EXE_DIV_OP) || (aluop_i == `EXE_DIVU_OP)) begin
 			whilo_o <= `WriteEnable;
-			hi_o <= div_result_i[63:32];
-			lo_o <= div_result_i[31:0];							
+			hi_o <= div_ret_i[63:32];
+			lo_o <= div_ret_i[31:0];							
 		end else if(aluop_i == `EXE_MTHI_OP) begin
 			whilo_o <= `WriteEnable;
 			hi_o <= reg1_i;

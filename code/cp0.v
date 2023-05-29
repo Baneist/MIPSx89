@@ -1,27 +1,15 @@
-`include "D:\Ray\Vivado\DoCPU_89\DoCPU_89.srcs\sources_1\new\defines.v"
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Usage    CP0协处理器
-// Vision   0.0
-// Auther   Ray
-//////////////////////////////////////////////////////////////////////////////////
-
 module cp0_reg(
-
-	input wire clk,
-	input wire rst,
-	
-	
+	input wire 					  clk,
+	input wire 					  rst,
 	input wire                    we_i,
 	input wire[4:0]               waddr_i,
 	input wire[4:0]               raddr_i,
 	input wire[`RegBus]           data_i,
-	
 	input wire[31:0]              excepttype_i,
 	input wire[5:0]               int_i,
 	input wire[`RegBus]           current_inst_addr_i,
 	input wire                    is_in_delayslot_i,
-	
 	output reg[`RegBus]           data_o,
 	output reg[`RegBus]           count_o,
 	output reg[`RegBus]           compare_o,
@@ -30,24 +18,31 @@ module cp0_reg(
 	output reg[`RegBus]           epc_o,
 	output reg[`RegBus]           config_o,
 	output reg[`RegBus]           prid_o,
-	
-	output reg                   timer_int_o    
-	
+	output reg                    timer_int_o    
 );
+
+	initial begin
+		data_o <= `ZeroWord;
+		count_o <= `ZeroWord;
+		compare_o <= `ZeroWord;
+		status_o <= 32'b00010000000000000000000000000000;
+		cause_o <= `ZeroWord;
+		epc_o <= `ZeroWord;
+		config_o <= 32'b00000000000000001000000000000000;
+		prid_o <= 32'b00000000010011000000000100000010;
+		timer_int_o <= `InterruptNotAssert;
+	end
 
 	always @ (posedge clk) begin
 		if(rst == `RstEnable) begin
 			count_o <= `ZeroWord;
 			compare_o <= `ZeroWord;
-			//status寄存器的CU为0001，表示协处理器CP0存在
 			status_o <= 32'b00010000000000000000000000000000;
 			cause_o <= `ZeroWord;
 			epc_o <= `ZeroWord;
-			//config寄存器的BE为1，表示Big-Endian；MT为00，表示没有MMU
 			config_o <= 32'b00000000000000001000000000000000;
-			//制作者是L，对应的是0x48，类型是0x1，基本类型，版本号是1.0
 			prid_o <= 32'b00000000010011000000000100000010;
-      timer_int_o <= `InterruptNotAssert;
+      		timer_int_o <= `InterruptNotAssert;
 		end else begin
 		  count_o <= count_o + 1 ;
 		  cause_o[15:10] <= int_i;

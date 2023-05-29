@@ -1,83 +1,58 @@
-`include "D:\Ray\Vivado\DoCPU_89\DoCPU_89.srcs\sources_1\new\defines.v"
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Usage    访存阶段
-// Vision   0.0
-// Auther   Ray
-//////////////////////////////////////////////////////////////////////////////////
-
 module mem(
 
-	input wire										rst,
-	
-	//来自执行阶段的信息	
-	input wire[`RegAddrBus]       wd_i,
-	input wire                    wreg_i,
-	input wire[`RegBus]					  wdata_i,
-	input wire[`RegBus]           hi_i,
-	input wire[`RegBus]           lo_i,
-	input wire                    whilo_i,	
-
-  input wire[`AluOpBus]        aluop_i,
+	input wire					 rst,
+	//段存储器的输入，只流过
+	input wire[`RegAddrBus]      wd_i,
+	input wire                   wreg_i,
+	input wire[`RegBus]			 wdata_i,
+	input wire[`RegBus]          hi_i,
+	input wire[`RegBus]          lo_i,
+	input wire                   whilo_i,	
+  	input wire[`AluOpBus]        aluop_i,
 	input wire[`RegBus]          mem_addr_i,
 	input wire[`RegBus]          reg2_i,
-	
-	//来自memory的信息
 	input wire[`RegBus]          mem_data_i,
-
-	//LLbit_i是LLbit寄存器的值
-	input wire                  LLbit_i,
-	//但不一定是最新值，回写阶段可能要写LLbit，所以还要进一步判断
-	input wire                  wb_LLbit_we_i,
-	input wire                  wb_LLbit_value_i,
-
-	//协处理器CP0的写信号
+	//分支转移预测输入
+	input wire                   LLbit_i,
+	input wire                   wb_LLbit_we_i,
+	input wire                   wb_LLbit_value_i,
+	//异常处理类输入
 	input wire                   cp0_reg_we_i,
 	input wire[4:0]              cp0_reg_write_addr_i,
 	input wire[`RegBus]          cp0_reg_data_i,
-	
 	input wire[31:0]             excepttype_i,
 	input wire                   is_in_delayslot_i,
-	input wire[`RegBus]          current_inst_address_i,	
-	
-	//CP0的各个寄存器的值，但不一定是最新的值，要防止回写阶段指令写CP0
+	input wire[`RegBus]          current_inst_address_i,
 	input wire[`RegBus]          cp0_status_i,
 	input wire[`RegBus]          cp0_cause_i,
 	input wire[`RegBus]          cp0_epc_i,
-
-	//回写阶段的指令是否要写CP0，用来检测数据相关
-  input wire                    wb_cp0_reg_we,
-	input wire[4:0]               wb_cp0_reg_write_addr,
-	input wire[`RegBus]           wb_cp0_reg_data,
-	
-	//送到回写阶段的信息
+	//WB段操作输入
+  	input wire                   wb_cp0_reg_we,
+	input wire[4:0]              wb_cp0_reg_write_addr,
+	input wire[`RegBus]          wb_cp0_reg_data,
+	//WB段操作输出
 	output reg[`RegAddrBus]      wd_o,
 	output reg                   wreg_o,
-	output reg[`RegBus]					 wdata_o,
+	output reg[`RegBus]			 wdata_o,
 	output reg[`RegBus]          hi_o,
 	output reg[`RegBus]          lo_o,
 	output reg                   whilo_o,
-
 	output reg                   LLbit_we_o,
 	output reg                   LLbit_value_o,
-
 	output reg                   cp0_reg_we_o,
 	output reg[4:0]              cp0_reg_write_addr_o,
 	output reg[`RegBus]          cp0_reg_data_o,
-	
-	//送到memory的信息
+	//对数据存储器的操作结果输出
 	output reg[`RegBus]          mem_addr_o,
-	output wire									 mem_we_o,
+	output wire					 mem_we_o,
 	output reg[3:0]              mem_sel_o,
 	output reg[`RegBus]          mem_data_o,
 	output reg                   mem_ce_o,
-	
 	output reg[31:0]             excepttype_o,
 	output wire[`RegBus]          cp0_epc_o,
 	output wire                  is_in_delayslot_o,
-	
-	output wire[`RegBus]         current_inst_address_o		
-	
+	output wire[`RegBus]         current_inst_address_o	
 );
 
   reg LLbit;
@@ -94,7 +69,7 @@ module mem(
 	assign current_inst_address_o = current_inst_address_i;
 	assign cp0_epc_o = cp0_epc;
 
-  //获取最新的LLbit的值
+  //????????LLbit???
 	always @ (*) begin
 		if(rst == `RstEnable) begin
 			LLbit <= 1'b0;
@@ -111,22 +86,22 @@ module mem(
 		if(rst == `RstEnable) begin
 			wd_o <= `NOPRegAddr;
 			wreg_o <= `WriteDisable;
-		  wdata_o <= `ZeroWord;
-		  hi_o <= `ZeroWord;
-		  lo_o <= `ZeroWord;
-		  whilo_o <= `WriteDisable;		
-		  mem_addr_o <= `ZeroWord;
-		  mem_we <= `WriteDisable;
-		  mem_sel_o <= 4'b0000;
-		  mem_data_o <= `ZeroWord;		
-		  mem_ce_o <= `ChipDisable;
-		  LLbit_we_o <= 1'b0;
-		  LLbit_value_o <= 1'b0;		
-		  cp0_reg_we_o <= `WriteDisable;
-		  cp0_reg_write_addr_o <= 5'b00000;
-		  cp0_reg_data_o <= `ZeroWord;		        
+			wdata_o <= `ZeroWord;
+			hi_o <= `ZeroWord;
+			lo_o <= `ZeroWord;
+			whilo_o <= `WriteDisable;		
+			mem_addr_o <= `ZeroWord;
+			mem_we <= `WriteDisable;
+			mem_sel_o <= 4'b0000;
+			mem_data_o <= `ZeroWord;		
+			mem_ce_o <= `ChipDisable;
+			LLbit_we_o <= 1'b0;
+			LLbit_value_o <= 1'b0;		
+			cp0_reg_we_o <= `WriteDisable;
+			cp0_reg_write_addr_o <= 5'b00000;
+			cp0_reg_data_o <= `ZeroWord;		        
 		end else begin
-		  wd_o <= wd_i;
+		  	wd_o <= wd_i;
 			wreg_o <= wreg_i;
 			wdata_o <= wdata_i;
 			hi_o <= hi_i;
@@ -136,11 +111,11 @@ module mem(
 			mem_addr_o <= `ZeroWord;
 			mem_sel_o <= 4'b1111;
 			mem_ce_o <= `ChipDisable;
-		  LLbit_we_o <= 1'b0;
-		  LLbit_value_o <= 1'b0;		
-		  cp0_reg_we_o <= cp0_reg_we_i;
-		  cp0_reg_write_addr_o <= cp0_reg_write_addr_i;
-		  cp0_reg_data_o <= cp0_reg_data_i;		 		  	
+			LLbit_we_o <= 1'b0;
+			LLbit_value_o <= 1'b0;		
+			cp0_reg_we_o <= cp0_reg_we_i;
+			cp0_reg_write_addr_o <= cp0_reg_write_addr_i;
+			cp0_reg_data_o <= cp0_reg_data_i;		 		  	
 			case (aluop_i)
 				`EXE_LB_OP:		begin
 					mem_addr_o <= mem_addr_i;
@@ -242,7 +217,7 @@ module mem(
 					mem_we <= `WriteDisable;
 					mem_sel_o <= 4'b1111;
 					mem_ce_o <= `ChipEnable;
-					case (mem_addr_i[1:0])
+					case (mem_addr_i[1:0	])
 						2'b00:	begin
 							wdata_o <= mem_data_i[31:0];
 						end
@@ -406,7 +381,7 @@ module mem(
 					end
 				end				
 				default:		begin
-          //什么也不做
+          //???????
 				end
 			endcase							
 		end    //if
@@ -465,7 +440,7 @@ module mem(
 					excepttype_o <= 32'h0000000d;        //trap
 				end else if(excepttype_i[11] == 1'b1) begin  //ov
 					excepttype_o <= 32'h0000000c;
-				end else if(excepttype_i[12] == 1'b1) begin  //返回指令
+				end else if(excepttype_i[12] == 1'b1) begin  //???????
 					excepttype_o <= 32'h0000000e;
 				end
 			end

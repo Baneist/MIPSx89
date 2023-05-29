@@ -1,20 +1,11 @@
-`include "D:\Ray\Vivado\DoCPU_89\DoCPU_89.srcs\sources_1\new\defines.v"
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Usage    ID/EX阶段的寄存器
-// Vision   0.0
-// Auther   Ray
-//////////////////////////////////////////////////////////////////////////////////
 
 module id_ex(
-
-	input	wire										clk,
-	input wire										rst,
-
+	input wire				      clk,
+	input wire					  rst,
 	//来自控制模块的信息
-	input wire[5:0]							 stall,
-	input wire                   flush,
-	
+	input wire[5:0]				  stall,
+	input wire                    flush,
 	//从译码阶段传递的信息
 	input wire[`AluOpBus]         id_aluop,
 	input wire[`AluSelBus]        id_alusel,
@@ -37,14 +28,13 @@ module id_ex(
 	output reg[`RegAddrBus]       ex_wd,
 	output reg                    ex_wreg,
 	output reg[`RegBus]           ex_link_address,
-  output reg                    ex_is_in_delayslot,
+  	output reg                    ex_is_in_delayslot,
 	output reg                    is_in_delayslot_o,
 	output reg[`RegBus]           ex_inst,
 	output reg[31:0]              ex_excepttype,
-	output reg[`RegBus]          ex_current_inst_address	
+	output reg[`RegBus]           ex_current_inst_address	
 	
 );
-
 	always @ (posedge clk) begin
 		if (rst == `RstEnable) begin
 			ex_aluop <= `EXE_NOP_OP;

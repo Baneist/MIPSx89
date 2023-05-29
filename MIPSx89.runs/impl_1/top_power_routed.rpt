@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date             : Sun Apr  2 21:36:14 2023
+| Date             : Sun Apr  9 16:15:18 2023
 | Host             : LAPTOP-JNSJ8DCA running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -29,41 +29,44 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 26.598 (Junction temp exceeded!) |
-| Design Power Budget (W)  | Unspecified*                     |
-| Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 25.801                           |
-| Device Static (W)        | 0.797                            |
-| Effective TJA (C/W)      | 4.6                              |
-| Max Ambient (C)          | 0.0                              |
-| Junction Temperature (C) | 125.0                            |
-| Confidence Level         | Low                              |
-| Setting File             | ---                              |
-| Simulation Activity File | ---                              |
-| Design Nets Matched      | NA                               |
-+--------------------------+----------------------------------+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 0.165        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.068        |
+| Device Static (W)        | 0.097        |
+| Effective TJA (C/W)      | 4.6          |
+| Max Ambient (C)          | 84.2         |
+| Junction Temperature (C) | 25.8         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
 1.1 On-Chip Components
 ----------------------
 
-+----------------+-----------+----------+-----------+-----------------+
-| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
-+----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.810 |      420 |       --- |             --- |
-|   LUT as Logic |     0.649 |      114 |     63400 |            0.18 |
-|   CARRY4       |     0.074 |       39 |     15850 |            0.25 |
-|   Register     |     0.073 |      220 |    126800 |            0.17 |
-|   BUFG         |     0.011 |        3 |        32 |            9.38 |
-|   F7/F8 Muxes  |     0.004 |        4 |     63400 |           <0.01 |
-|   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |     1.123 |      384 |       --- |             --- |
-| I/O            |    23.869 |       26 |       210 |           12.38 |
-| Static Power   |     0.797 |          |           |                 |
-| Total          |    26.598 |          |           |                 |
-+----------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.001 |        3 |       --- |             --- |
+| Slice Logic              |     0.024 |    33622 |       --- |             --- |
+|   LUT as Logic           |     0.023 |    11316 |     63400 |           17.85 |
+|   CARRY4                 |    <0.001 |      223 |     15850 |            1.41 |
+|   LUT as Distributed RAM |    <0.001 |       44 |     19000 |            0.23 |
+|   Register               |    <0.001 |    18077 |    126800 |           14.26 |
+|   F7/F8 Muxes            |    <0.001 |     3167 |     63400 |            5.00 |
+|   BUFG                   |    <0.001 |        9 |        32 |           28.13 |
+|   Others                 |     0.000 |       34 |       --- |             --- |
+| Signals                  |     0.031 |    26815 |       --- |             --- |
+| DSPs                     |    <0.001 |        4 |       240 |            1.67 |
+| I/O                      |     0.012 |       21 |       210 |           10.00 |
+| Static Power             |     0.097 |          |           |                 |
+| Total                    |     0.165 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -72,16 +75,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     2.531 |       1.969 |      0.563 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.966 |       0.873 |      0.093 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     6.750 |       6.746 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.071 |       0.056 |      0.015 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.018 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -125,9 +128,11 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+-------+--------+-----------------+
-| Clock | Domain | Constraint (ns) |
-+-------+--------+-----------------+
++---------+--------+-----------------+
+| Clock   | Domain | Constraint (ns) |
++---------+--------+-----------------+
+| clk_pin | clk_in |            10.0 |
++---------+--------+-----------------+
 
 
 3. Detailed Reports
@@ -136,19 +141,20 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------------+-----------+
-| Name           | Power (W) |
-+----------------+-----------+
-| top            |    25.801 |
-|   Divider      |     0.178 |
-|   Divider_slow |     0.183 |
-|   cpu          |     0.627 |
-|     sccpu      |     0.627 |
-|       ID       |     0.530 |
-|       IF       |     0.013 |
-|       IR       |     0.008 |
-|       PC       |     0.075 |
-|   seg7         |     0.788 |
-+----------------+-----------+
++---------------+-----------+
+| Name          | Power (W) |
++---------------+-----------+
+| top           |     0.068 |
+|   Core_0      |     0.053 |
+|     cpu_0     |     0.046 |
+|       div0    |     0.001 |
+|       ex_mem0 |     0.022 |
+|       id_ex0  |     0.006 |
+|       if_id0  |     0.007 |
+|       mem0    |     0.004 |
+|       pc_reg0 |     0.002 |
+|     imem_0    |     0.007 |
+|       U0      |     0.007 |
++---------------+-----------+
 
 

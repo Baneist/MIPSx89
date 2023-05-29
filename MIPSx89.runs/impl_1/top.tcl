@@ -123,6 +123,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 4
+  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
@@ -136,9 +137,9 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/Repos/MIPSx89/MIPSx89.runs/synth_1/top.dcp
-  read_ip -quiet d:/Repos/MIPSx89/MIPSx89.srcs/sources_1/ip/imem/imem.xci
+  read_ip -quiet D:/Repos/MIPSx89/MIPSx89.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc D:/Repos/MIPSx89/code/constraints.xdc
+  read_xdc D:/Repos/MIPSx89/code/TOP.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

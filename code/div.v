@@ -1,24 +1,15 @@
-`include "D:\Ray\Vivado\DoCPU_89\DoCPU_89.srcs\sources_1\new\defines.v"
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Usage    ³ý·¨Æ÷Ä£¿é
-// Vision   0.0
-// Auther   Ray
-//////////////////////////////////////////////////////////////////////////////////
 
 module div(
-
-	input wire										clk,
-	input wire										rst,
-	
-	input wire                    signed_div_i,
-	input wire[31:0]              opdata1_i,
-	input wire[31:0]		   				opdata2_i,
-	input wire                    start_i,
-	input wire                    annul_i,
-	
-	output reg[63:0]             result_o,
-	output reg			             ready_o
+	input wire					clk,
+	input wire					rst,
+	input wire                  signed_div_i,
+	input wire[31:0]            opdata1_i,
+	input wire[31:0]		  	opdata2_i,
+	input wire                  start_i,
+	input wire                  annul_i,
+	output reg[63:0]            ret_o,
+	output reg			        ready_o
 );
 
 	wire[32:0] div_temp;
@@ -28,14 +19,22 @@ module div(
 	reg[31:0] divisor;	 
 	reg[31:0] temp_op1;
 	reg[31:0] temp_op2;
-	
+
+	initial begin
+		divisor <= `ZeroWord;
+		dividend <= {`ZeroWord,`ZeroWord};
+		ret_o <= {`ZeroWord,`ZeroWord};
+		ready_o <= `DivretNotReady;
+		state <= `DivFree;
+	end
+
 	assign div_temp = {1'b0,dividend[63:32]} - {1'b0,divisor};
 
 	always @ (posedge clk) begin
 		if (rst == `RstEnable) begin
 			state <= `DivFree;
-			ready_o <= `DivResultNotReady;
-			result_o <= {`ZeroWord,`ZeroWord};
+			ready_o <= `DivretNotReady;
+			ret_o <= {`ZeroWord,`ZeroWord};
 		end else begin
 		  case (state)
 		  	`DivFree:			begin               //DivFree×´Ì¬
@@ -60,8 +59,8 @@ module div(
               divisor <= temp_op2;
              end
           end else begin
-						ready_o <= `DivResultNotReady;
-						result_o <= {`ZeroWord,`ZeroWord};
+						ready_o <= `DivretNotReady;
+						ret_o <= {`ZeroWord,`ZeroWord};
 				  end          	
 		  	end
 		  	`DivByZero:		begin               //DivByZero×´Ì¬
@@ -92,12 +91,12 @@ module div(
 		  		end	
 		  	end
 		  	`DivEnd:			begin               //DivEnd×´Ì¬
-        	result_o <= {dividend[64:33], dividend[31:0]};  
-          ready_o <= `DivResultReady;
+        	ret_o <= {dividend[64:33], dividend[31:0]};  
+          ready_o <= `DivretReady;
           if(start_i == `DivStop) begin
           	state <= `DivFree;
-						ready_o <= `DivResultNotReady;
-						result_o <= {`ZeroWord,`ZeroWord};       	
+						ready_o <= `DivretNotReady;
+						ret_o <= {`ZeroWord,`ZeroWord};       	
           end		  	
 		  	end
 		  endcase

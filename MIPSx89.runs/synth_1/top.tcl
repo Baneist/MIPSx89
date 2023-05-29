@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -86,46 +87,31 @@ set_property ip_output_repo d:/Repos/MIPSx89/MIPSx89.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+add_files D:/Repos/MIPSx89/code/TEST.coe
 read_verilog -library xil_defaultlib {
-  D:/Repos/MIPSx89/code/Asynchronous_D_FF.v
-  D:/Repos/MIPSx89/code/DEC.v
-  D:/Repos/MIPSx89/code/II.v
-  D:/Repos/MIPSx89/code/LLbit_reg.v
-  D:/Repos/MIPSx89/code/PipeDEreg.v
-  D:/Repos/MIPSx89/code/PipeEMreg.v
-  D:/Repos/MIPSx89/code/PipeEXE.v
-  D:/Repos/MIPSx89/code/PipeID.v
-  D:/Repos/MIPSx89/code/PipeIF.v
-  D:/Repos/MIPSx89/code/PipeIR.v
-  D:/Repos/MIPSx89/code/PipeMEM.v
-  D:/Repos/MIPSx89/code/PipeMWreg.v
-  D:/Repos/MIPSx89/code/PipeWB.v
-  D:/Repos/MIPSx89/code/alu.v
-  D:/Repos/MIPSx89/code/clo.v
-  D:/Repos/MIPSx89/code/clz.v
-  D:/Repos/MIPSx89/code/complement.v
-  D:/Repos/MIPSx89/code/cp0.v
-  D:/Repos/MIPSx89/code/cpmem.v
-  D:/Repos/MIPSx89/code/cpu.v
-  D:/Repos/MIPSx89/code/cu.v
-  D:/Repos/MIPSx89/code/direct.v
-  D:/Repos/MIPSx89/code/div.v
-  D:/Repos/MIPSx89/code/divider.v
-  D:/Repos/MIPSx89/code/extend.v
-  D:/Repos/MIPSx89/code/hi_lo_function.v
-  D:/Repos/MIPSx89/code/memory.v
-  D:/Repos/MIPSx89/code/mult.v
-  D:/Repos/MIPSx89/code/mux.v
-  D:/Repos/MIPSx89/code/npc.v
-  D:/Repos/MIPSx89/code/pcreg.v
-  D:/Repos/MIPSx89/code/predictor.v
-  D:/Repos/MIPSx89/code/regfile.v
-  D:/Repos/MIPSx89/code/sccomp_dataflow.v
-  D:/Repos/MIPSx89/code/seg7x16.v
-  D:/Repos/MIPSx89/code/top.v
+  D:/Repos/MIPSx89/code/DEF.v
+  D:/Repos/MIPSx89/code/CP0.v
+  D:/Repos/MIPSx89/code/CPU.v
+  D:/Repos/MIPSx89/code/CTRL.v
+  D:/Repos/MIPSx89/code/DIV.v
+  D:/Repos/MIPSx89/code/DIVD.v
+  D:/Repos/MIPSx89/code/DMEM.v
+  D:/Repos/MIPSx89/code/EX.v
+  D:/Repos/MIPSx89/code/EX_MEM.v
+  D:/Repos/MIPSx89/code/HILO.v
+  D:/Repos/MIPSx89/code/ID.v
+  D:/Repos/MIPSx89/code/ID_EX.v
+  D:/Repos/MIPSx89/code/IF_ID.v
+  D:/Repos/MIPSx89/code/LLBIT.v
+  D:/Repos/MIPSx89/code/MEM.v
+  D:/Repos/MIPSx89/code/MEM_WB.v
+  D:/Repos/MIPSx89/code/PC.v
+  D:/Repos/MIPSx89/code/REGS.v
+  D:/Repos/MIPSx89/code/SEG.v
+  D:/Repos/MIPSx89/code/TOP.v
 }
-read_ip -quiet d:/Repos/MIPSx89/MIPSx89.srcs/sources_1/ip/imem/imem.xci
-set_property used_in_implementation false [get_files -all d:/Repos/MIPSx89/MIPSx89.gen/sources_1/ip/imem/imem_ooc.xdc]
+read_ip -quiet D:/Repos/MIPSx89/MIPSx89.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0.xci
+set_property used_in_implementation false [get_files -all d:/Repos/MIPSx89/MIPSx89.gen/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -136,10 +122,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/Repos/MIPSx89/code/constraints.xdc
-set_property used_in_implementation false [get_files D:/Repos/MIPSx89/code/constraints.xdc]
+read_xdc D:/Repos/MIPSx89/code/TOP.xdc
+set_property used_in_implementation false [get_files D:/Repos/MIPSx89/code/TOP.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental D:/Repos/MIPSx89/MIPSx89.srcs/utils_1/imports/synth_1/top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -1,10 +1,10 @@
 ###################################################################################
 ## Usage    可以选择3种输出的下板约束,同时有时钟调整
 ## Vision   1.0
-## Auther   Ray 
+## Auther   Ray
 ###################################################################################
 
-create_clock -period 100.000 -name clk_pin -waveform {0.000 50.000} [get_ports clk_in]
+create_clock -period 10.000 -name clk_pin -waveform {0.000 5.000} [get_ports clk_in]
 set_input_delay -clock [get_clocks *] 1.000 [get_ports reset]
 set_output_delay -clock [get_clocks *] 0.000 [get_ports -filter { NAME =~  "*" && DIRECTION == "OUT" }]
 
@@ -57,3 +57,5 @@ set_property IOSTANDARD LVCMOS33 [get_ports {o_seg[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports en_clk]
 set_property IOSTANDARD LVCMOS33 [get_ports reset]
 set_property IOSTANDARD LVCMOS33 [get_ports clk_in]
+
+
